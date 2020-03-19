@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: RecipesPage
+  },
+  {
+    path: ':recipeId',//variable
+    loadChildren: () => import('./recipe-detail/recipe-detail.module').then( m => m.RecipeDetailPageModule)
   }
 ];
 
