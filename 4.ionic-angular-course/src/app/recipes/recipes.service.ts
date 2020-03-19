@@ -33,4 +33,10 @@ export class RecipesService {
     });
     return { ...foundRecipe }; //pass complete object not reference
   }
+  deleteRecipe(recipeId: string) {
+    this.recipes = this.recipes.filter(recipe => {
+      return recipe.id !== recipeId
+    })
+    console.log("after deletion", this.recipes);
+  }
 }
